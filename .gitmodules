@@ -1,0 +1,6 @@
+[submodule "UniTrackRemasterBackend"]
+	path = UniTrackRemasterBackend
+	url = https://github.com/SpasMilenkov/UniTrackRemasterBackend.git
+[submodule "UniTrackRemasterFrontend"]
+	path = UniTrackRemasterFrontend
+	url = git@github.com:SpasMilenkov/UniTrackRemasterFrontend.git
