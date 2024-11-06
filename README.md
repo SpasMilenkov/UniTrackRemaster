@@ -21,11 +21,12 @@ The remastered version of UniTrack
 | **Add Admin dashboard** | Add the admin dashboard page to the frontend with placeholder data | ✅ Completed |
 | **Add Super admin dashboard** | Add the super admin dashboard page to the frontend with placeholder data | ✅ Completed |
 | **Add School index page** | Add the school page index page to the frontend with placeholder data | ✅ Completed |
+| **Redesign frontend theme** | Revamp the look and feel of the Nuxt web app | ✅ Completed |
 | **Integrate School creation with server** | Start making requests using the school creation form | ⏳ Pending |
 | **Integrate Student dashboard with server** | Start fetching data for the student dashboard from the server | ⏳ Pending |
 | **Integrate Teacher dashboard with server** | Start fetching data for the teacher dashboard from the server | ⏳ Pending | 
 | **Integrate Admin dashboard with server** | Start fetching data for the admin dashboard from the server | ⏳ Pending | 
-| **Integrate Super Admin dashboard with server** | Start fetching data for the super admin dashboard from the server | ⏳ Pending | 
+| **Integrate Super Admin dashboard with server** | Start fetching data for the super admin dashboard from the server | ✅ Completed | 
 | **Integrate School Index with server** | Start fetching data for the student dashboard from the server | ⏳ Pending | 
 | **Integrate Calendar dashboard with server** | Start fetching data for the student dashboard from the server | ⏳ Pending | 
 | **Integrate Generate PDF report button** | Start fetching data for the student dashboard from the server | ⏳ Pending | 
@@ -60,12 +61,12 @@ And for the backend:
 | **Project Initialization** | Set up Docker, configure database & ORM (Entity Framework) | ✅ Completed |
 | **CRUD Operations User** | Implement CRUD for User |  ✅ Completed |
 | **CRUD Operations Student** | Implement CRUD for Student |✅ Completed |
-| **CRUD Operations School** | Implement CRUD for School | 🚧 In Progress |
-| **CRUD Operations Application** | Implement CRUD for Application | ⏳ Pending |
+| **CRUD Operations School** | Implement CRUD for School | ✅ Completed |
+| **CRUD Operations Application** | Implement CRUD for Application | ✅ Completed |
 | **CRUD Operations Teacher** | Implement CRUD for Teacher | ⏳ Pending |
 | **CRUD Operations Admin** | Implement CRUD for Admin | ⏳ Pending |
 | **CRUD Operations Parent** | Implement CRUD for Parent | ⏳ Pending |
-| **CRUD Operations SuperAdmin** | Implement CRUD for Super admin | ⏳ Pending |
+| **CRUD Operations SuperAdmin** | Implement CRUD for Super admin | ✅ Completed |
 | **PDF Report Generation** | Implement the pdf rendering on the server side | ⏳ Pending |
 | **Authentication & Authorization** | Secure API endpoints with JWT | ✅ Completed |
 | **Validation & Error Handling** | Enhance data validation, implement global error handling | ⏳ Pending |
