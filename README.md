@@ -92,7 +92,7 @@ The backend API provides CRUD operations for different user roles, authorization
 
 - **School Pages and Stepper Navigation**  
   ![School Page](./docs/assets/school-page.png)
-  - Detailed school page with navigation and options for managing each school profile.
+  - Detailed school page with the goal to help people discover the right educational institution for them.
 
   - **Onboarding Steps**  
     ![Step 1](./docs/assets/school-stepper-1.png)  
@@ -173,4 +173,4 @@ The backend API provides CRUD operations for different user roles, authorization
 ---
 
 
-UniTrackRemaster is currently just my pet project and nothing to serious. It would be wonderful if it actually saw any use, but for now I use it as a way to hone my web dev skills. If you made it to here you showed at least some interest in the repo, thank you!
+UniTrackRemaster is currently just my pet project and nothing too serious. It would be wonderful if it actually saw any use, but for now I use it as a way to hone my web dev skills. If you made it to here you showed at least some interest in the repo, thank you!✨ 
