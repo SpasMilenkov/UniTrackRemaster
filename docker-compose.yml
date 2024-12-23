@@ -1,0 +1,116 @@
+version: "3.8"
+services:
+  unitrack-db:
+    image: postgres:alpine
+    container_name: UniTrackRemaster.Database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: UniTrackRemaster
+    ports:
+      - "5434:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+  unitrack-backend:
+    build:
+      context: .
+      dockerfile: UniTrackRemasterBackend/Dockerfile
+    image: localhost:5000/unitrack-backend:latest
+    secrets:
+      - firebase_credentials
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - FirebaseCredentials__CredentialsPath=/run/secrets/firebase_credentials
+      - ASPNETCORE_URLS=http://+:5086
+    networks:
+      - app-network
+    depends_on:
+      - unitrack-db
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
+        delay: 5s
+      update_config:
+        order: start-first
+        failure_action: rollback
+
+  unitrack-frontend:
+    build:
+      context: ./UniTrackRemasterFrontend
+      dockerfile: Dockerfile
+    image: localhost:5000/unitrack-frontend:latest
+    container_name: UniTrackRemaster.Frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NUXT_PUBLIC_API_BASE_URL=/api
+    networks:
+      - app-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  nginx:
+    image: nginx:latest
+    container_name: UniTrackRemaster.LoadBalancer
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    ports:
+      - "8080:443"
+      - "8081:8081"
+    networks:
+      - app-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: UniTrackRemaster.Prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - app-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: UniTrackRemaster.Grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    networks:
+      - app-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: overlay
+
+secrets:
+  firebase_credentials:
+    file: ./UniTrackRemasterBackend/unitrack-firebase-credentials.json
