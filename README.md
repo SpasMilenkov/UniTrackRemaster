@@ -167,7 +167,7 @@ UniTrack is a comprehensive educational management platform that revolutionizes 
 - **Custom Dashboards**: Role-specific KPI tracking
 - **Market Intelligence**: Cross-institutional comparisons
 - **Scheduled Reports**: Automated periodic report delivery
-- **Export Capabilities**: Multiple format support (PDF, Excel, CSV)
+- **Export Capabilities**: Export your ai generated insights in PDF format
 
 ### 🎯 **Smart Academic Management**
 - **Intelligent Attendance Tracking**: Pattern recognition and alerts
