@@ -44,7 +44,7 @@ services:
         delay: 5s
       resources:
         limits:
-          memory: 2G # Adjust based on your needs
+          memory: 2G # Adjust based on system capabilities, 2GB performs sufficient
         reservations:
           memory: 512M
 
