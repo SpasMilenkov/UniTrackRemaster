@@ -5,13 +5,11 @@
   
   <h3>Transform Education with Intelligent Management</h3>
   
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
   [![.NET](https://img.shields.io/badge/.NET-8.0-purple.svg)](https://dotnet.microsoft.com/)
   [![Vue.js](https://img.shields.io/badge/Vue.js-3.x-green.svg)](https://vuejs.org/)
   [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
   
-  [Features](#-key-features) • [Demo](#-live-demo) • [Documentation](https://spasmilenkov.github.io/UniTrackDocs/) • [Quick Start](#-quick-start) • [Architecture](#-architecture)
 </div>
 
 ---
